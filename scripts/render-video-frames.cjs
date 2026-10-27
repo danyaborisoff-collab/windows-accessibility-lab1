@@ -1,0 +1,4 @@
+const {chromium}=require('playwright');const path=require('path'),fs=require('fs');const {pathToFileURL}=require('url');
+(async()=>{const root=path.resolve(__dirname,'..');const dir=path.join(root,'video/frames');fs.mkdirSync(dir,{recursive:true});
+const opts={headless:true};if(process.env.CHROMIUM_PATH)opts.executablePath=process.env.CHROMIUM_PATH;
+const browser=await chromium.launch(opts);try{const page=await browser.newPage({viewport:{width:1280,height:720}});await page.goto(pathToFileURL(path.join(root,'video/slides.html')).href);await page.evaluate(()=>document.fonts.ready);const frames=page.locator('.frame');for(let i=0;i<await frames.count();i++)await frames.nth(i).screenshot({path:path.join(dir,`frame-${String(i+1).padStart(3,'0')}.png`)});}finally{await browser.close()}})().catch(e=>{console.error(e);process.exit(1)});
