@@ -1,1 +1,11 @@
-{"name":"windows-accessibility-lab1","private":true,"version":"1.0.0","scripts":{"test":"node scripts/test-browser.cjs","video":"bash scripts/render-video.sh"},"devDependencies":{"playwright":"^1.56.0"}}
+{
+  "name": "windows-accessibility-lab1",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node scripts/test-browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.0"
+  }
+}

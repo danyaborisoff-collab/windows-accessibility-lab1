@@ -1,8 +1,8 @@
-"""Restore pre-rendered demo media; no third-party dependencies."""
+"""Restore HTML form preview images; no third-party dependencies."""
 from pathlib import Path
 import base64, hashlib, json, lzma
 root = Path(__file__).resolve().parents[1]
-allowed = {'assets/before.png', 'assets/after.png', 'video/poster.png', 'video/demo.mp4'}
+allowed = {'assets/before.png', 'assets/after.png'}
 parts = sorted((root / 'media-source').glob('part-*.txt'))
 packed = ''.join(p.read_text().strip() for p in parts)
 items = json.loads(lzma.decompress(base64.b64decode(packed)))
