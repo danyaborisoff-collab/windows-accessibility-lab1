@@ -1,0 +1,36 @@
+{
+  "environment": "Linux Chromium / Playwright",
+  "scope": "Browser checks only. Not Windows UIA or NVDA.",
+  "results": [
+    {
+      "version": "before",
+      "checks": [
+        "DOM/ARIA name",
+        "text input",
+        "slider",
+        "checkbox",
+        "search action",
+        "dialog and focus return",
+        "separate popup",
+        "390px no horizontal overflow"
+      ],
+      "result": "PASS",
+      "buttonBrowserSnapshot": "- button"
+    },
+    {
+      "version": "after",
+      "checks": [
+        "DOM/ARIA name",
+        "text input",
+        "slider",
+        "checkbox",
+        "search action",
+        "dialog and focus return",
+        "separate popup",
+        "390px no horizontal overflow"
+      ],
+      "result": "PASS",
+      "buttonBrowserSnapshot": "- button \"Поиск\""
+    }
+  ]
+}
